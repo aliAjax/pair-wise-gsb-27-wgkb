@@ -258,3 +258,269 @@ textarea {
   .metrics { grid-template-columns: 1fr; }
   .details { grid-template-columns: 1fr; }
 }
+
+/* ---------- 分批结算 ---------- */
+
+.metric strong em {
+  font-size: 16px;
+  font-style: normal;
+  color: #69758c;
+}
+
+.metric.alert strong { color: #c84b31; }
+
+.rules {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.rules span {
+  background: #fff;
+  border: 1px dashed #b9c9da;
+  color: #3a506b;
+  border-radius: 999px;
+  padding: 7px 12px;
+  font-size: 13px;
+}
+
+.toolbar-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.toolbar-actions button { padding: 8px 12px; font-size: 13px; }
+button.ghost { background: #fff; color: #c84b31; border: 1px solid #e4c3bb; }
+
+.preview {
+  border: 1px solid #dfe7f1;
+  border-radius: 8px;
+  background: #f6f9fc;
+  padding: 10px 12px;
+  display: grid;
+  gap: 4px;
+}
+
+.preview-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 0;
+  font-size: 13px;
+  color: #536078;
+}
+
+.preview-row.segment { padding-left: 8px; border-left: 3px solid #64b6ac; }
+.preview-row.total { border-top: 1px dashed #c7d3e2; padding-top: 6px; margin-top: 2px; color: #172033; }
+
+.hint { margin: 0; font-size: 12px; color: #8492a6; }
+
+.group-list { display: grid; gap: 16px; margin-top: 14px; }
+.empty.big { padding: 56px 12px; }
+
+.group {
+  border: 1px solid #dfe7f1;
+  border-radius: 10px;
+  padding: 16px;
+  background: #fbfcfe;
+}
+
+.group-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.group-head h3 { margin: 0; font-size: 18px; }
+.group-head .route { color: #176b87; font-weight: 600; margin-left: 8px; }
+.month { margin: 4px 0 0; color: #69758c; font-size: 13px; }
+
+.group-total { text-align: right; }
+.group-total span { display: block; color: #69758c; font-size: 12px; }
+.group-total strong { font-size: 22px; color: #176b87; }
+
+.ladder { margin: 12px 0 4px; }
+
+.ladder-track {
+  position: relative;
+  height: 12px;
+  border-radius: 999px;
+  background: #e7edf4;
+  overflow: hidden;
+  display: flex;
+}
+
+.ladder-fill { height: 100%; }
+.tier-fill-0 { background: #8fb8cc; }
+.tier-fill-1 { background: #176b87; }
+.tier-fill-2 { background: #0e4859; }
+
+.ladder-marks {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 6px;
+  font-size: 12px;
+  color: #8492a6;
+}
+
+.ladder-marks .on { color: #176b87; font-weight: 700; }
+
+.batch-list { display: grid; gap: 10px; margin-top: 12px; }
+
+.batch {
+  border: 1px solid #e2e9f2;
+  border-left: 4px solid #8fb8cc;
+  border-radius: 8px;
+  padding: 12px 14px;
+  background: #fff;
+}
+
+.batch.split { border-left-color: #176b87; }
+.batch.settled { background: #fafbfc; }
+
+.batch-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.batch-date { margin: 0; font-size: 12px; color: #8492a6; }
+.batch-title { margin: 2px 0 0; font-weight: 700; }
+
+.cold {
+  margin-left: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #9a5b13;
+  background: #fdf0dc;
+  border-radius: 999px;
+  padding: 2px 8px;
+}
+
+.status.is-settled { background: #e8f4ef; color: #14724f; }
+.status.is-transit { background: #fff5e0; color: #9a5b13; }
+
+.batch-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 6px 12px;
+  margin: 10px 0;
+  color: #536078;
+  font-size: 13px;
+}
+
+.segments {
+  list-style: none;
+  margin: 8px 0;
+  padding: 0;
+  display: grid;
+  gap: 6px;
+}
+
+.segments li {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 10px;
+  align-items: center;
+  border-radius: 6px;
+  padding: 7px 10px;
+  font-size: 13px;
+}
+
+.segments li.tier-0 { background: #f0f6f9; }
+.segments li.tier-1 { background: #e6f0f4; }
+.segments li.tier-2 { background: #ddebf0; }
+
+.seg-label em { font-style: normal; color: #9a5b13; font-size: 12px; }
+.seg-discount { color: #176b87; font-weight: 600; }
+
+.batch-foot {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.batch-amount { margin: 0; color: #536078; font-size: 13px; }
+.batch-amount strong { color: #172033; font-size: 17px; margin-left: 4px; }
+
+.split-flag {
+  margin-left: 8px;
+  background: #e6f0f4;
+  color: #176b87;
+  border-radius: 999px;
+  padding: 2px 8px;
+  font-size: 12px;
+}
+
+.diff { margin: 6px 0 0; font-size: 13px; width: 100%; }
+.diff.pending { color: #c84b31; }
+.diff.confirmed { color: #14724f; }
+.diff strong { font-size: 15px; }
+
+.group-foot {
+  margin-top: 12px;
+  border-top: 1px dashed #d4deea;
+  padding-top: 12px;
+}
+
+.sum-line {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  color: #536078;
+  font-size: 14px;
+}
+
+.sum-line strong { margin-left: 8px; color: #172033; }
+
+.pending-box {
+  margin-top: 10px;
+  border-radius: 8px;
+  padding: 10px 12px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.pending-box.refund { background: #fdecea; border: 1px solid #f0c4be; }
+.pending-box.surcharge { background: #fff5e0; border: 1px solid #eedcb4; }
+.pending-box p { margin: 0; color: #536078; font-size: 13px; }
+.pending-box strong { font-size: 16px; color: #c84b31; }
+
+.confirm-row { display: flex; gap: 8px; flex-wrap: wrap; width: 100%; }
+.confirm-row input { max-width: 280px; }
+
+.confirmed-line { margin: 8px 0 0; color: #14724f; font-size: 13px; }
+
+.log-panel {
+  border: 1px solid #dfe7f1;
+  border-radius: 8px;
+  padding: 12px;
+  background: #fff;
+  margin-top: 12px;
+}
+
+.log-panel h3 { margin: 0 0 8px; font-size: 15px; }
+
+.log-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.log-table th, .log-table td {
+  text-align: left;
+  padding: 7px 8px;
+  border-bottom: 1px solid #edf1f6;
+}
+.log-table th { color: #69758c; font-weight: 600; }
+.money-refund { color: #c84b31; font-weight: 600; white-space: nowrap; }
+.money-add { color: #9a5b13; font-weight: 600; white-space: nowrap; }
+
+@media (max-width: 860px) {
+  .batch-grid { grid-template-columns: 1fr; }
+  .segments li { grid-template-columns: 1fr; gap: 2px; }
+}
